@@ -1,0 +1,16 @@
+{
+  "car": [
+    {
+      "name": "인덕대학교",
+      "available": true
+    },
+    {
+      "name": "성수동",
+      "available": true
+    },
+    {
+      "name": "디지털미디어시티역",
+      "available": true
+    }
+  ]
+}
