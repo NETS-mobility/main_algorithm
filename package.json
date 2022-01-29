@@ -1,0 +1,22 @@
+{
+  "name": "main_algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NETS-mobility/main_algorithm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NETS-mobility/main_algorithm/issues"
+  },
+  "homepage": "https://github.com/NETS-mobility/main_algorithm#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
