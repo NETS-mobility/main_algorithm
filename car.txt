@@ -1,0 +1,25 @@
+car.json 참고자료
+
+{
+  "car": [
+    {
+      "name": "인덕대학교",
+      "time": [
+        {
+          "serviceStart": "16:00",
+          "serviceEnd": "18:00"
+        },
+        {
+          "serviceStart": "17:00",
+          "serviceEnd": "19:00"
+        }
+      ]
+    },
+    {
+      "name": "성수동"
+    },
+    {
+      "name": "디지털미디어시티역"
+    }
+  ]
+}
