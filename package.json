@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NETS-mobility/main_algorithm#readme",
   "dependencies": {
+    "axios": "^0.25.0",
     "express": "^4.17.2"
   }
 }
