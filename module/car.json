@@ -1,16 +1,30 @@
 {
   "car": [
     {
+      "cid":"1",
       "name": "인덕대학교",
-      "available": true
+      "available": true,
+      "schedule":[
+        {"id":"11"},
+        {"id":"14"}
+      ]
     },
     {
+      "cid":"2",
       "name": "성수동",
-      "available": true
+      "available": true,
+      "schedule":[
+        {"id":"12"},
+        {"id":"15"}
+      ]
     },
     {
+      "cid":"3",
       "name": "디지털미디어시티역",
-      "available": true
+      "available": true,
+      "schedule":[
+        {"id":"13"}
+      ]
     }
   ]
 }
