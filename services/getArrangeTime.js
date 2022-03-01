@@ -9,21 +9,22 @@
   }
 };*/
 
-const pool2 = require("mysql2");
+const pool2 = require("../module/mysql2");
 
-const GetArrangeTime = (service) => {
+const GetArrangeTime = async (service) => {
+  let result;
   const connection = await pool2.getConnection(async (conn) => conn);
   try {
     const sql =
       "select `service_free_time` as `freeTime` from `service_info` where `service_kind_id`=?;";
     const sql_result = await connection.query(sql, [service]);
     const sql_data = sql_result[0];
-    return sql_data[0].freeTime;
+    result = sql_data[0].freeTime;
   } catch (err) {
     console.error("err : " + err);
-    return undefined; // 오류 발생 -> undefined 리턴
   } finally {
     connection.release();
+    return result;
   }
 };
 
