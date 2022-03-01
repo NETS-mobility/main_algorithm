@@ -1,0 +1,69 @@
+{
+  "preReservation": [
+    {
+      "id": "11",
+      "service": "basic",
+      "way": "to hospital",
+      "hospitalArrival": "2022-02-10T11:20:00+0900",
+      "hospitalDepart": "0",
+      "departureLat": 37.57560320760615,
+      "departureLon": 126.91818237304727,
+      "arrivalLat": 37.58430990600712,
+      "arrivalLon": 126.93775177001993,
+      "pickupTime": "2022-02-10T11:09:00+0900",
+      "dropTime": "2022-02-10T11:20:00+0900"
+    },
+    {
+      "id": "12",
+      "service": "plus",
+      "way": "to home",
+      "hospitalArrival": "0",
+      "hospitalDepart": "2022-02-10T10:00:00+0900",
+      "departureLat": 37.55737026044882,
+      "departureLon": 126.97895050048868,
+      "arrivalLat": 37.61140978703092,
+      "arrivalLon": 127.0254278182988,
+      "pickupTime": "0",
+      "dropTime": "2022-02-10T10:41:00+0900"
+    },
+    {
+      "id": "13",
+      "service": "basic",
+      "way": "two",
+      "hospitalArrival": "2022-02-10T14:40:00+0900",
+      "hospitalDepart": "2022-02-10T15:20:00+0900",
+      "departureLat": 37.62968933939001,
+      "departureLon": 127.1537127661396,
+      "arrivalLat": 37.61140978703092,
+      "arrivalLon": 127.0254278182988,
+      "pickupTime": "2022-02-10T14:04:00+0900",
+      "dropTime": "2022-02-10T16:02:00+0900"
+    },
+    {
+      "id": "14",
+      "service": "plus",
+      "way": "two",
+      "hospitalArrival": "2022-02-10T13:00:00+0900",
+      "hospitalDepart": "2022-02-10T14:20:00+0900",
+      "departureLat": 37.59366847116515,
+      "departureLon": 127.12994384765659,
+      "arrivalLat": 37.582350987639046,
+      "arrivalLon": 127.05963134765665,
+      "pickupTime": "2022-02-10T12:22:00+0900",
+      "dropTime": "2022-02-10T14:55:00+0900"
+    },
+    {
+      "id": "15",
+      "service": "plus",
+      "way": "to hospital",
+      "hospitalArrival": "2022-02-10T16:20:00+0900",
+      "hospitalDepart": "0",
+      "departureLat": 37.52290597240989,
+      "departureLon": 126.9799804687504,
+      "arrivalLat": 37.51571709945442,
+      "arrivalLon": 126.90692138671915,
+      "pickupTime": "2022-02-10T15:42:00+0900",
+      "dropTime": "2022-02-10T16:20:00+0900"
+    }
+  ]
+}

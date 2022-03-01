@@ -17,10 +17,18 @@ predictionType : 출발 시간 구하기 or 도착 시간 구하기 타입 선�
 
 predictionTime : 희망 출발 시간 or 희망 도착 시간 입력
 */
+
 const { default: axios } = require("axios");
-const TmapTimeMachine = async (departureLon,departureLat,arrivalLon,arrivalLat,predictionType,predictionTime) => {
+const TmapTimeMachine = async (
+  departureLon,
+  departureLat,
+  arrivalLon,
+  arrivalLat,
+  predictionType,
+  predictionTime
+) => {
   var headers = {};
-  headers["appKey"] = "YOUR_APP_KEY"; //앱키 삽입해야 함
+  headers["appKey"] = "l7xxa020ecbe57d34fe9af21f362f0b1da17"; //앱키 삽입해야 함
   headers["Content-Type"] = "application/json";
 
   //value = "2" : 총 소요시간, 소요 거리만 확인하는 옵션
@@ -43,18 +51,6 @@ const TmapTimeMachine = async (departureLon,departureLat,arrivalLon,arrivalLat,p
       },
       predictionType: predictionType, //출발지->도착지
       predictionTime: predictionTime, //예약 날짜, 시간
-      wayPoints: {
-        wayPoint: [
-          {
-            lon: "126.98261605850641",
-            lat: "37.57528380389962",
-          },
-          {
-            lon: "126.98773907773705",
-            lat: "37.56611469775449",
-          },
-        ],
-      },
       searchOption: "01", //교통최적+무료우선 옵션 선택
     },
   });
@@ -73,7 +69,7 @@ const TmapTimeMachine = async (departureLon,departureLat,arrivalLon,arrivalLat,p
     estimatedTime = Math.round(res.data.features[0].properties.totalTime / 60); //tmap에서 계산한 시간에서 반올림(단위: 분)
     return estimatedTime;
   } catch (err) {
-    console.log(JSON.stringify(err));
+    console.log(err);
   }
 };
 

@@ -6,10 +6,10 @@
       "way": "to hospital",
       "hospitalArrival": "2022-02-10T11:20:00+0900",
       "hospitalDepart": "0",
-      "departureLat": "37.62968933939001",
-      "departureLon": "127.1537127661396",
-      "arrivalLat": "37.61140978703092",
-      "arrivalLon": "127.0254278182988"
+      "departureLat": 37.62968933939001,
+      "departureLon": 127.1537127661396,
+      "arrivalLat": 37.61140978703092,
+      "arrivalLon": 127.0254278182988
     },
     {
       "id": "2",
@@ -17,10 +17,10 @@
       "way": "two",
       "hospitalArrival": "2022-02-10T13:00:00+0900",
       "hospitalDepart": "2022-02-10T14:00:00+0900",
-      "departureLat": "37.61140978703092",
-      "departureLon": "127.0254278182988",
-      "arrivalLat": "37.62968933939001",
-      "arrivalLon": "127.1537127661396"
+      "departureLat": 37.61140978703092,
+      "departureLon": 127.0254278182988,
+      "arrivalLat": 37.62968933939001,
+      "arrivalLon": 127.1537127661396
     },
     {
       "id": "3",
@@ -28,10 +28,10 @@
       "way": "two",
       "hospitalArrival": "2022-02-10T15:40:00+0900",
       "hospitalDepart": "2022-02-10T18:00:00+0900",
-      "departureLat": "37.61140978703092",
-      "departureLon": "127.0254278182988",
-      "arrivalLat": "37.61962790645562",
-      "arrivalLon": "127.05891609191936"
+      "departureLat": 37.61140978703092,
+      "departureLon": 127.0254278182988,
+      "arrivalLat": 37.61962790645562,
+      "arrivalLon": 127.05891609191936
     },
     {
       "id": "4",
@@ -39,10 +39,10 @@
       "way": "to home",
       "hospitalArrival": "0",
       "hospitalDepart": "2022-02-10T10:20:00+0900",
-      "departureLat": "37.56561986117724",
-      "departureLon": "126.93854570388831",
-      "arrivalLat": "37.62968933939001",
-      "arrivalLon": "127.1537127661396"
+      "departureLat": 37.56561986117724,
+      "departureLon": 126.93854570388831,
+      "arrivalLat": 37.62968933939001,
+      "arrivalLon": 127.1537127661396
     },
     {
       "id": "5",
@@ -50,10 +50,10 @@
       "way": "two",
       "hospitalArrival": "2022-02-10T14:20:00+0900",
       "hospitalDepart": "2022-02-10T15:20:00+0900",
-      "departureLat": "37.61962790645562",
-      "departureLon": "127.05891609191936",
-      "arrivalLat": "37.62968933939001",
-      "arrivalLon": "127.1537127661396"
+      "departureLat": 37.61962790645562,
+      "departureLon": 127.05891609191936,
+      "arrivalLat": 37.62968933939001,
+      "arrivalLon": 127.1537127661396
     },
     {
       "id": "6",
@@ -61,10 +61,10 @@
       "way": "two",
       "hospitalArrival": "2022-02-10T16:00:00+0900",
       "hospitalDepart": "2022-02-10T18:00:00+0900",
-      "departureLat": "37.59735073355118",
-      "departureLon": "127.05236410796213",
-      "arrivalLat": "37.61140978703092",
-      "arrivalLon": "127.0254278182988"
+      "departureLat": 37.59735073355118,
+      "departureLon": 127.05236410796213,
+      "arrivalLat": 37.61140978703092,
+      "arrivalLon": 127.0254278182988
     }
   ]
 }
