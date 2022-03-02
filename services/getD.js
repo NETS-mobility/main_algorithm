@@ -13,7 +13,8 @@ const GetD = (L2, drop_x, drop_y) => {
       "departure",
       nextRes.post_pickup_time //다음 예약 시작 시간
     ).then((tmapTime) => {
-      d = tmapTime;
+      const resDate = new Date(nextRes.post_pickup_time);
+      d = new Date(resDate - tmapTime);
       if (L2[i].c < d) L3.push(L2[i].car_id);
     });
   }

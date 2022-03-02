@@ -13,7 +13,9 @@ const GetC = (L1, res_x, res_y) => {
       "arrival",
       car_schedule.prev_terminate_time
     ).then((tmapTime) => {
-      cArr.push({ car_id: L1[i].car_id, c: tmapTime + 20 });
+      const resDate = new Date(car_schedule.prev_terminate_time);
+      ctime = new Date(resDate + (tmapTime + 20)); //tmap(이전예약->현재 예약 픽업 장소) + 20
+      cArr.push({ car_id: L1[i].car_id, c: ctime });
     });
   }
   return cArr;

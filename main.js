@@ -13,8 +13,9 @@ const GetB = require("../services/getB.js");
 const GetD = require("../services/getD.js");
 const GetResult = require("../services/getResult.js");
 const Func = require("../");
+const req = require("express/lib/request");
 
-// ===== 예약 정보 받아오기 =====
+// ===== 예약 정보 클라이언트에서 받아오기 =====
 const Main = () => {
   const {
     dire,
@@ -24,9 +25,8 @@ const Main = () => {
     drop_y,
     hos_x,
     hos_y,
-    pickup_time,
-    hos_arr_time, //희망
-    hos_dep_time, //희망
+    old_hos_arr_time, //희망 병원 도착
+    old_hos_dep_time, //희망 병원 출발
     rev_date,
     gowithHospitalTime,
   } = req.body;
@@ -39,6 +39,9 @@ const Main = () => {
   if (gowithHospitalTime > 120) {
     isOverPoint = 1; // 2시간 초과
   }
+
+  let hos_arr_time = rev_date + old_hos_arr_time;
+  let hos_dep_time = rev_date + old_hos_dep_time;
 
   let a, b, cArr, d;
   let L1, L2, L3;
