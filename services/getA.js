@@ -1,5 +1,3 @@
-const Data = require("../module/reservation.json"); //예약 정보 json 파일
-const TwoWayData = require("../module/twoWay.json"); //왕복일 경우, 첫 번째 호출인지 두 번째 호출인지 구분하기 위함
 const TmapTimeMachine = require("../module/tmapTimeMachine.js"); //tmap 타임머신 경로 찾기
 const GetArrangeTime = require("./getArrangeTime.js");
 //a (출발지, 목적지)
@@ -28,27 +26,28 @@ const GetArrangeTime = require("./getArrangeTime.js");
 //3안) reservation_state_id를 이용해서 배차만 완료된 건 0, 결제까지 완료된 건 1로 설정.
 //    -> reservation_state_id가 0인 걸 매일 오전 12시에 삭제(어제까지의 예약 중에서만 삭제) (오늘 12시에 예약하고 있는 사람이 있을 수도 있으므로)
 
-//서비스 id 이용해서 예약 정보 가져오기
-const GetA = async (departure, arrival) => {
-  // const X = Data.reservation[id]?.service == "basic" ? 10 : 20; //서비스 타입에 따라 정리 시간(X) 계산
-  //case1: 편도(자택->병원)
+const GetA = async (departure, arrival, way, hosTime) => {
+  let moveType = "";
+  let a = 0;
 
-  //   const reservation = Data.reservation[idx2];
-  if (reservation.way == "to hospital") {
-    let a1 = 0;
-    await TmapTimeMachine(
-      departure?.lon,
-      departure?.lat,
-      arrival?.lon,
-      arrival?.lat,
-      "arrival",
-      reservation?.hospitalArrival
-    ).then((tmapTime) => {
-      a1 = tmapTime + 20 + GetArrangeTime(); //a1
-    });
-    const resDate = new Date(reservation.hospitalArrival);
-    a1 = a1 * 60000; //minutes -> milliseconds
+  if (way == "집-병원") {
+    moveType = "arrival";
+  } else {
+    moveType = "departure";
   }
-  //}
+
+  await TmapTimeMachine(
+    departure?.lon,
+    departure?.lat,
+    arrival?.lon,
+    arrival?.lat,
+    moveType,
+    hosTime
+  ).then((tmapTime) => {
+    a = tmapTime + 20 + GetArrangeTime(); //a1
+  });
+  a = a * 60000; //minutes -> milliseconds
+  return a;
 };
-module.exports = GetReservation;
+
+module.exports = GetA;

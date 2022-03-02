@@ -8,7 +8,7 @@
  * 이전 예약장소 y: prev_last_y
  * 다음 예약장소 x: post_first_x
  * 다음 예약장소 y: post_first_y
-*/
+ */
 
 const pool2 = require("./mysql2");
 

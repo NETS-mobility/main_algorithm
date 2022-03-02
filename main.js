@@ -1,3 +1,9 @@
+//알고리즘 메인 파일
+// const GetReservation = require("./module/getReservation");
+// const getL1 = require("./module/getL1");
+// const TmapTimeMachine = require("./module/tmap");
+
+// GetReservation(1);
 const express = require("express");
 const router = express.Router();
 const GetA = require("../services/a1.js");
@@ -9,7 +15,7 @@ const GetResult = require("../services/getResult.js");
 const Func = require("../");
 
 // ===== 예약 정보 받아오기 =====
-router.post("/getRev", async function (req, res, next) {
+const Main = () => {
   const {
     dire,
     pickup_x,
@@ -116,6 +122,6 @@ router.post("/getRev", async function (req, res, next) {
   }
 
   res.status(200).send();
-});
+};
 
-module.exports = router;
+module.exports = Main;
