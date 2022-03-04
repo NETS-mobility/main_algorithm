@@ -25,10 +25,6 @@ router.post("/getRev", async function (req, res, next) {
     gowithHospitalTime,
   } = req.body;
 
-  // 변수 저장 코드 //
-  console.log(req.body);
-  ///////////////////
-
   let isOverPoint = 0;
   if (gowithHospitalTime > 120) {
     isOverPoint = 1; // 2시간 초과
@@ -46,7 +42,7 @@ router.post("/getRev", async function (req, res, next) {
         hos_arr_time
       );
       b1 = GetB(hos_arr_time, a1);
-      L11 = GetL1(a1, b1);
+      L11 = await GetL1(a1, b1, rev_date);
       cArr1 = GetC(L11, pickup_x, pickup_y);
       L21 = GetL2(b1, cArr1);
       L31 = GetD(L21, drop_x, drop_y);
@@ -57,7 +53,7 @@ router.post("/getRev", async function (req, res, next) {
         hos_dep_time
       );
       b2 = hos_dep_time;
-      L12 = GetL1(a2, b2);
+      L12 = await GetL1(a2, b2, rev_date);
       cArr2 = GetC(L12, hos_x, hos_y);
       L22 = GetL2(b2, cArr2);
       L32 = GetD(L22, drop_x, drop_y);
@@ -72,7 +68,7 @@ router.post("/getRev", async function (req, res, next) {
         hos_arr_time
       );
       b = GetB(hos_arr_time, a);
-      L1 = GetL1(a, b);
+      L1 = await GetL1(a, b, rev_date);
       cArr = GetC(L1, pickup_x, pickup_y);
       L2 = GetL2(b, cArr);
       d = GetA(
@@ -93,7 +89,7 @@ router.post("/getRev", async function (req, res, next) {
       hos_arr_time
     );
     b = GetB(hos_arr_time, a);
-    L1 = GetL1(a, b);
+    L1 = await GetL1(a, b, rev_date);
     cArr = GetC(L1, pickup_x, pickup_y);
     L2 = GetL2(b, cArr);
     L3 = GetD(L2, drop_x, drop_y);
@@ -107,7 +103,7 @@ router.post("/getRev", async function (req, res, next) {
       hos_dep_time
     );
     b = hos_dep_time;
-    L1 = GetL1(a, b);
+    L1 = await GetL1(a, b, rev_date);
     cArr = GetC(L1, hos_x, hos_y);
     L2 = GetL2(b, cArr);
     L3 = GetD(L2, drop_x, drop_y);
