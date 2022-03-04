@@ -9,4 +9,4 @@ const GetResult = (L3, cArr) => {
   return opt;
 };
 
-module.exports = GetResult();
+module.exports = GetResult;

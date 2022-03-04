@@ -1,12 +1,34 @@
 const express = require("express");
 const router = express.Router();
-const GetA = require("../services/a1.js");
+const GetA = require("../services/getA.js");
 const GetL1 = require("../module/getL1.js");
 const GetL2 = require("../module/getL2.js");
 const GetB = require("../services/getB.js");
 const GetD = require("../services/getD.js");
 const GetResult = require("../services/getResult.js");
 const Func = require("../");
+
+/*
+    dire,
+    pickup_x,
+    pickup_y,
+    drop_x,
+    drop_y,
+    hos_x,
+    hos_y,
+    pickup_time,
+    hos_arr_time, //희망
+    hos_dep_time, //희망
+    rev_date,
+    gowithHospitalTime,
+
+ * 이전 예약시간: prev_terminate_time = 2022-03-04 11:00:00
+ * 다음 예약시간: post_pickup_time = 2022-03-04 17:00:00
+ * 이전 예약장소 x: prev_last_x = 126.937838
+ * 이전 예약장소 y: prev_last_y = 37.5535483
+ * 다음 예약장소 x: post_first_x = 126.922458
+ * 다음 예약장소 y: post_first_y = 37.5861458
+*/
 
 // ===== 예약 정보 받아오기 =====
 router.post("/getRev", async function (req, res, next) {

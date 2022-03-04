@@ -7,19 +7,20 @@
 const pool2 = require("./mysql2");
 
 const GetL1 = async (a1, b1) => {
-  let result;
-  const connection = await pool2.getConnection(async (conn) => conn);
-  try {
-    const sql =
-      "select `car_id` from `free_car_time` where `car_able_start_time` < ? and `car_able_time` > ?;";
-    const sql_result = await connection.query(sql, [b1, a1]);
-    result = sql_result[0];
-  } catch (err) {
-    console.error("err : " + err);
-  } finally {
-    connection.release();
-    return result;
-  }
+  // let result;
+  // const connection = await pool2.getConnection(async (conn) => conn);
+  // try {
+  //   const sql =
+  //     "select `car_id` from `free_car_time` where `car_able_start_time` < ? and `car_able_time` > ?;";
+  //   const sql_result = await connection.query(sql, [b1, a1]);
+  //   result = sql_result[0];
+  // } catch (err) {
+  //   console.error("err : " + err);
+  // } finally {
+  //   connection.release();
+  //   return result;
+  // }
+  return [{ car_id: 11 }, { car_id: 22 }, { car_id: 33 }, { car_id: 44 }];
 };
 
 module.exports = GetL1;

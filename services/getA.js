@@ -1,4 +1,4 @@
-const TmapTimeMachine = require("../module/tmapTimeMachine.js"); //tmap 타임머신 경로 찾기
+const TmapTimeMachine = require("../services/tmapTimeMachine.js"); //tmap 타임머신 경로 찾기
 const GetArrangeTime = require("./getArrangeTime.js");
 //a (출발지, 목적지)
 //자택->병원 예상 소요시간

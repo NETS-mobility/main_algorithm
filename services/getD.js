@@ -1,10 +1,10 @@
-const TmapTimeMachine = require("../module/tmapTimeMachine.js");
+const TmapTimeMachine = require("../services/tmapTimeMachine.js");
 const Func = require("../module/getCarPreNextRevInfo.js");
 
 const GetD = (L2, drop_x, drop_y) => {
   const L3 = [];
   for (let i = 0; i < L2.length; i++) {
-    const nextRes = Func(L2[i].car_id);
+    //const nextRes = Func(L2[i].car_id);
     TmapTimeMachine(
       drop_y,
       drop_x,
