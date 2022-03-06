@@ -8,7 +8,7 @@ const GetD = require("../services/getD.js");
 const GetResult = require("../services/getResult.js");
 const Func = require("../");
 
-// ===== 예약 정보 받아오기 =====
+// ===== 메인 알고리즘 실행 =====
 router.post("/getRev", async function (req, res, next) {
   const {
     dire,

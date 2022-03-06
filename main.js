@@ -31,10 +31,6 @@ const Main = () => {
     gowithHospitalTime,
   } = req.body;
 
-  // 변수 저장 코드 //
-  console.log(req.body);
-  ///////////////////
-
   let isOverPoint = 0;
   if (gowithHospitalTime > 120) {
     isOverPoint = 1; // 2시간 초과

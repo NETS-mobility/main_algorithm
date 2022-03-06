@@ -26,7 +26,6 @@ const GetL1 = async (a, b, rd) => {
     connection.release();
     return result;
   }
-  return [];
 };
 
 module.exports = GetL1;
