@@ -6,6 +6,7 @@ const GetDispatchAvailableCar = require("../algorithm/GetDispatchAvailableCar");
 const GetL1 = require("../algorithm/GetL1");
 const GetL2 = require("../algorithm/GetL2");
 
+//집-병원
 const Case1 = async (testData) => {
   const {
     dire,

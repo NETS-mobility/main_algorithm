@@ -1,5 +1,13 @@
 const TmapTimeMachine = require("./tmapTimeMachine");
 const GetArrangeTime = require("./GetArrangeTime");
+/*
+======== GetEstimatedTime =======
+예상 소요 시간을 계산함.
+
+return  {
+  estimatedTime: 예상 소요 시간(milliseconds)
+}
+*/
 
 const GetEstimatedTime = async (
   departure,
@@ -26,9 +34,9 @@ const GetEstimatedTime = async (
       moveType,
       hosTime
     ).then((tmapTime) => {
-      estimatedTime = tmapTime + 20 + GetArrangeTime(service_kind_id); //a1
+      estimatedTime = tmapTime + 20 + GetArrangeTime(service_kind_id); //예상 소요 시간 = tmap을 통해 나온 예상 소요 시간 + 정리 시간 + 20분(알파)
     });
-    estimatedTime = estimatedTime * 60000; //minutes -> milliseconds
+    estimatedTime = estimatedTime * 60000; //minute -> milliseconds
     return estimatedTime;
   } catch (err) {
     return err;

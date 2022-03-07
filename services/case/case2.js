@@ -7,6 +7,7 @@ const GetL2 = require("../algorithm/GetL2");
 const ToKoreanTime = require("../util/toKoreanTime");
 const AddMinuteToDate = require("../util/addMinuteToDate");
 
+//병원-집
 const Case2 = async (testData) => {
   const {
     dire,

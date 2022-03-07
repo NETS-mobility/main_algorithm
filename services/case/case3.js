@@ -7,6 +7,7 @@ const GetL1 = require("../algorithm/GetL1");
 const GetL2 = require("../algorithm/GetL2");
 const AddMinuteToDate = require("../util/addMinuteToDate");
 
+//집-집 (왕복) (동행 1시간 이하)
 const Case3 = async (testData) => {
   const {
     pickup_x,
