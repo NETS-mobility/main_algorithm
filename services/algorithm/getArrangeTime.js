@@ -1,15 +1,28 @@
 // === 서비스 정리 시간 구하는 모듈 ===
 // service: 예약 서비스 종류 ID
 
-/*const GetArrangeTime = (service) => {
-  if (service == "basic") {
-    return 10; //db에서 가져오기
-  } else {
-    return 20; //db에서 가져오기
-  }
-};*/
+//service_kind_id: 예약 서비스 종류 ID
+//네츠 휠체어 편도 = 2
+//네츠 휠체어 왕복 = 3
+//네츠 휠체어 플러스 편도 = 4
+//네츠 휠체어 플러스 왕복 = 5
 
-const pool2 = require("../module/mysql2");
+// const GetArrangeTime = (service_kind_id) => {
+//   switch (
+//     service_kind_id //클라이언트에서 가져오기
+//   ) {
+//     case 2:
+//     case 3:
+//       return 10; //db에서 가져오기
+//     case 4:
+//     case 5:
+//       return 20; //db에서 가져오기
+//   }
+// };
+
+// export default GetArrangeTime;
+
+const pool2 = require("../../module/mysql2");
 
 const GetArrangeTime = async (service) => {
   let result;
