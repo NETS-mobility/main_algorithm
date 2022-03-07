@@ -1,24 +1,4 @@
-/*
--------------------------------------
-----------TmapTimeMachine------------
--------------------------------------
-
-departureLon : 출발지 경도
-
-departureLat : 출발지 위도
-
-arrivalLon : 도착지 경도
-
-arrivalLat : 도착지 위도
-
-predictionType : 출발 시간 구하기 or 도착 시간 구하기 타입 선택
-- "departure" : 출발시간 예측 길 안내.
-- "arrival" : 도착시간 예측 길 안내
-
-predictionTime : 희망 출발 시간 or 희망 도착 시간 입력
-*/
-
-const { default: axios } = require("axios");
+const axios = require("axios");
 const TmapTimeMachine = async (
   departureLon,
   departureLat,
@@ -40,14 +20,14 @@ const TmapTimeMachine = async (
       departure: {
         //출발지
         name: "test1",
-        lon: departureLon,
-        lat: departureLat,
+        lon: departureLat,
+        lat: departureLon,
       },
       destination: {
         //도착지
         name: "test2",
-        lon: arrivalLon,
-        lat: arrivalLat,
+        lon: arrivalLat,
+        lat: arrivalLon,
       },
       predictionType: predictionType, //출발지->도착지
       predictionTime: predictionTime, //예약 날짜, 시간
