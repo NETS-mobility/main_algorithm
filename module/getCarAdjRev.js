@@ -6,15 +6,19 @@
 // rt: 서비스 시작 시간 (문자열, ex. "13:00")
 
 /*
- * 이전 예약정보: prev (없을 경우 undefiend)
+ * 이전 예약정보: prev 
+ *    종료시간: time (없을 경우 운행시작시간)
+ *    예약장소 x: x
+ *    예약장소 y: y
+ * 다음 예약정보: next (없을 경우 운행종료시간)
  *    종료시간: time
  *    예약장소 x: x
  *    예약장소 y: y
- * 다음 예약정보: next (없을 경우 undefiend)
- *    종료시간: time
- *    예약장소 x: x
- *    예약장소 y: y
+ * (예약정보가 없을 경우, 장소는 차고지주소)
  */
+
+const work_start_time = "09:00:00"; // 운행시작시간 (임시 데이터)
+const work_close_time = "21:00:00"; // 운행종료시간
 
 const pool2 = require("./mysql2");
 
@@ -28,6 +32,7 @@ const getCarAdjRev = async (id, rd, rtime) => {
     const sql2 = "select * from `car_reservation` where `car_id`=? and `date`=? and `pickup_time`>? order by `pickup_time`;";
     const sqlr2 = await connection.query(sql2, [id, rd, rtime]);
     const sqld2 = sqlr2[0];
+    const sql3 = "select `x_coordinate` as `x`, `y_coordinate` as `y` from `car` as C, `address_coordinate` as A where C.`car_id`=? and C.`garage_detail_address`=A.`address`;";
 
     let prev, next;
     if(sqld1.length > 0)
@@ -38,12 +43,32 @@ const getCarAdjRev = async (id, rd, rtime) => {
         y: sqld1[0].arrival_y
       }
     }
+    else
+    {
+      const sqlr3 = await connection.query(sql3, [id]);
+      const sqld3 = sqlr3[0];
+      prev = {
+        time: work_start_time,
+        x: sqld3[0].x,
+        y: sqld3[0].y
+      }
+    }
     if(sqld2.length > 0)
     {
       next = {
         time: sqld2[0].pickup_time,
         x: sqld2[0].start_x,
         y: sqld2[0].start_y
+      }
+    }
+    else
+    {
+      const sqlr3 = await connection.query(sql3, [id]);
+      const sqld3 = sqlr3[0];
+      next = {
+        time: work_close_time,
+        x: sqld3[0].x,
+        y: sqld3[0].y
       }
     }
 
