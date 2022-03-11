@@ -1,10 +1,10 @@
-// const GetDispatchResult =require( "../algorithm/GetDispatchResult";
-// const GetEstimatedTime =require( "../algorithm/GetEstimatedTime";
-// const GetPickupTime =require( "../algorithm/GetPickupTime";
-// const GetPrevArrivalTime =require( "../algorithm/GetPrevArrivalTime";
-// const GetDispatchAvailableCar =require( "../algorithm/GetDispatchAvailableCar";
-// const GetL1 =require( "../algorithm/GetL1";
-// const GetL2 =require( "../algorithm/GetL2";
+// import GetDispatchResult from "../algorithm/GetDispatchResult";
+// import GetEstimatedTime from "../algorithm/GetEstimatedTime";
+// import GetPickupTime from "../algorithm/GetPickupTime";
+// import GetPrevArrivalTime from "../algorithm/GetPrevArrivalTime";
+// import GetDispatchAvailableCar from "../algorithm/GetDispatchAvailableCar";
+// import GetL1 from "../algorithm/getL1";
+// import GetL2 from "../algorithm/getL2";
 
 // const Case4 = (testData) => {
 //   const {

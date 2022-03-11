@@ -22,7 +22,7 @@
 
 // export default GetArrangeTime;
 
-const pool2 = require("../../module/mysql2");
+const pool2 = require("./mysql2");
 
 const GetArrangeTime = async (service) => {
   let result;
