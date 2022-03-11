@@ -1,6 +1,6 @@
-import TmapTimeMachine from "./tmapTimeMachine";
-import Func from "./getCarPreNextRevInfo";
-import AddMinuteToDate from "../util/addMinuteToDate";
+const TmapTimeMachine = require("./tmapTimeMachine");
+const Func = require("./getCarPreNextRevInfo");
+const AddMinuteToDate = require("../util/addMinuteToDate");
 
 const GetPrevDepartureTime = async (L1, res_x, res_y, pickupTime) => {
   const prevDepartureTimeArray = [];
@@ -33,4 +33,4 @@ const GetPrevDepartureTime = async (L1, res_x, res_y, pickupTime) => {
   return prevDepartureTimeArray;
 };
 
-export default GetPrevDepartureTime;
+module.exports = GetPrevDepartureTime;

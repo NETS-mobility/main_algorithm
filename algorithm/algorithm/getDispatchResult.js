@@ -9,4 +9,4 @@ const GetDispatchResult = (L3) => {
   return opt;
 };
 
-export default GetDispatchResult;
+module.exports = GetDispatchResult;

@@ -6,4 +6,4 @@ const ToKoreanTime = (time) => {
   );
 };
 
-export default ToKoreanTime;
+module.exports = ToKoreanTime;

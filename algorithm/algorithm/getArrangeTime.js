@@ -17,4 +17,4 @@ const GetArrangeTime = (service_kind_id) => {
   }
 };
 
-export default GetArrangeTime;
+module.exports = GetArrangeTime;

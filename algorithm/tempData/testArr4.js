@@ -93,4 +93,4 @@ const testDataArr4 = [
   },
 ];
 
-export default testDataArr4;
+module.exports = testDataArr4;

@@ -1,5 +1,6 @@
-import ToKoreanTime from "../util/toKoreanTime";
-import Func from "./getCarPreNextRevInfo";
+const ToKoreanTime = require("../util/toKoreanTime");
+const Func = require("./getCarPreNextRevInfo");
+
 const GetL2 = (prevDepartureTimeArray) => {
   const L2 = [];
   for (let i = 0; i < prevDepartureTimeArray.length; i++) {
@@ -14,4 +15,4 @@ const GetL2 = (prevDepartureTimeArray) => {
   return L2;
 };
 
-export default GetL2;
+module.exports = GetL2;

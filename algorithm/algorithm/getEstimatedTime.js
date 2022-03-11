@@ -1,5 +1,5 @@
-import TmapTimeMachine from "./tmapTimeMachine";
-import GetArrangeTime from "./getArrangeTime";
+const TmapTimeMachine = require("./tmapTimeMachine");
+const GetArrangeTime = require("./getArrangeTime");
 
 const GetEstimatedTime = async (
   departure,
@@ -38,4 +38,4 @@ const GetEstimatedTime = async (
   }
 };
 
-export default GetEstimatedTime;
+module.exports = GetEstimatedTime;

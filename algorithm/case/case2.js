@@ -1,11 +1,11 @@
-import GetDispatchResult from "../algorithm/getDispatchResult";
-import GetEstimatedTime from "../algorithm/getEstimatedTime";
-import GetPrevDepartureTime from "../algorithm/getPrevDepartureTime";
-import GetDispatchAvailableCar from "../algorithm/getDispatchAvailableCar";
-import GetL1 from "../algorithm/getL1";
-import GetL2 from "../algorithm/getL2";
-import ToKoreanTime from "../util/toKoreanTime";
-import AddMinuteToDate from "../util/addMinuteToDate";
+const GetDispatchResult = require("../algorithm/getDispatchResult");
+const GetEstimatedTime = require("../algorithm/getEstimatedTime");
+const GetPrevDepartureTime = require("../algorithm/getPrevDepartureTime");
+const GetDispatchAvailableCar = require("../algorithm/getDispatchAvailableCar");
+const GetL1 = require("../algorithm/getL1");
+const GetL2 = require("../algorithm/getL2");
+const ToKoreanTime = require("../util/toKoreanTime");
+const AddMinuteToDate = require("../util/addMinuteToDate");
 
 const Case2 = async (testData, isCase2) => {
   const {
@@ -79,4 +79,4 @@ const Case2 = async (testData, isCase2) => {
   }
 };
 
-export default Case2;
+module.exports = Case2;

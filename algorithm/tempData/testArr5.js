@@ -85,4 +85,4 @@ const testDataArr5 = [
     service_kind_id: 4, // 편도 플러스
   },
 ];
-export default testDataArr5;
+module.exports = testDataArr5;

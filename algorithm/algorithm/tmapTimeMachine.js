@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 const TmapTimeMachine = async (
   departureLon,
   departureLat,
@@ -59,4 +59,4 @@ const TmapTimeMachine = async (
   }
 };
 
-export default TmapTimeMachine;
+module.exports = TmapTimeMachine;

@@ -56,4 +56,4 @@ const testData4 = {
   service_kind_id: 5, //서비스 종류 1: 네츠무브 2: 네츠휠체어편도 3: 네츠휠체어왕복 4:네츠휠체어플러스편도 5:네츠휠체어플러스왕복
 };
 
-export { testData1, testData2, testData3, testData4 };
+module.exports = { testData1, testData2, testData3, testData4 };

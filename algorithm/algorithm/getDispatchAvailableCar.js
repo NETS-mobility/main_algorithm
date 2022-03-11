@@ -1,7 +1,8 @@
-import TmapTimeMachine from "./tmapTimeMachine";
-import ToKoreanTime from "../util/toKoreanTime";
-import Func from "./getCarPreNextRevInfo";
-import AddMinuteToDate from "../util/addMinuteToDate";
+const TmapTimeMachine = require("./tmapTimeMachine");
+const ToKoreanTime = require("../util/toKoreanTime");
+const Func = require("./getCarPreNextRevInfo");
+const AddMinuteToDate = require("../util/addMinuteToDate");
+
 const GetDispatchAvailableCar = async (L2, drop_x, drop_y, hos_time) => {
   const L3 = [];
   let new_hos_time = new Date(hos_time);
@@ -32,4 +33,4 @@ const GetDispatchAvailableCar = async (L2, drop_x, drop_y, hos_time) => {
   return L3;
 };
 
-export default GetDispatchAvailableCar;
+module.exports = GetDispatchAvailableCar;

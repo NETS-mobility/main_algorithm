@@ -1,16 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const { Case1, Case2, Case3 } = require("../services/case");
+/*const { Case1, Case2, Case3 } = require("../frontWork/case");
 const {
   testData1,
   testData2,
   testData3,
   testData4,
-} = require("../data/tmpData");
+} = require("../data/tmpData");*/
+const Algo = require("../algorithm/algo");
 
 // ===== 메인 알고리즘 실행 =====
-router.post("/getRev", async function (req, res, next) {
-  let isOverPoint = 0;
+router.post("/dispatch", async function (req, res, next) {
+
+  Algo();
+  res.status(200).send();
+  /*let isOverPoint = 0;
   if (testData2.gowithHospitalTime > 120) {
     isOverPoint = 1; // 2시간 초과
   }
@@ -44,7 +48,7 @@ router.post("/getRev", async function (req, res, next) {
     }
   }
   return "no dispatch"; //배차 실패했으면 no dispatch 반환
-  res.status(200).send(); //return값 전달해주셔야 합니다.
+  res.status(200).send(); //return값 전달해주셔야 합니다.*/
 });
 
 module.exports = router;

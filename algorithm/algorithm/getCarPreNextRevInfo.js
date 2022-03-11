@@ -110,4 +110,4 @@ const Func = (i) => {
   return cars[i];
 };
 
-export default Func;
+module.exports = Func;

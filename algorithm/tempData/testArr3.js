@@ -1,5 +1,5 @@
 //김지수
-export const testCar3 = [
+const testCar3 = [
   {
     //car_id = 3-1
     //prev: 연세대학교 신촌세브란스병원
@@ -154,4 +154,4 @@ const testDataArr3 = [
   },
 ];
 
-export default testDataArr3;
+module.exports = { testCar3, testDataArr3 };

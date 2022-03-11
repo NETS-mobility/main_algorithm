@@ -1,13 +1,13 @@
-import { Case1, Case2, Case3 } from "./case";
-import {
+const { Case1, Case2, Case3 } = require("./case");
+const {
   testDataArr1,
   testDataArr2,
   testDataArr3,
   testDataArr4,
   testDataArr5,
-} from "./tempData";
-import { testData1, testData2, testData3, testData4 } from "./tempData/tmpData";
-import ToKoreanTime from "./util/toKoreanTime";
+} = require("./tempData");
+const { testData1, testData2, testData3, testData4 } = require("./tempData/tmpData");
+const ToKoreanTime = require("./util/toKoreanTime");
 
 const Algo = async () => {
   let isOverPoint = 0;
@@ -59,4 +59,5 @@ const Algo = async () => {
   }
   return "no dispatch";
 };
-export default Algo;
+
+module.exports = Algo;
