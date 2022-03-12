@@ -48,9 +48,9 @@ const testCar3 = [
 
 const testDataArr3 = [
   {
-    //rev_id = 3-1
-    //pickup: 다산반도유보라메이플타운
-    //hos: 서울의료원
+    rev_id: "3-1",
+    pickup: "다산반도유보라메이플타운",
+    hos: "서울의료원",
     dire: "집-병원",
     pickup_x: 127.15376323911244,
     pickup_y: 37.62944467379483,
@@ -65,9 +65,9 @@ const testDataArr3 = [
     service_kind_id: 4,
   },
   {
-    //rev_id = 3-2
-    //hos: 가톨릭대학교 은평성모병원
-    //drop: 이화여자대학교
+    rev_id: "3-2",
+    hos: "가톨릭대학교 은평성모병원",
+    drop: "이화여자대학교",
     dire: "병원-집",
     pickup_x: 0,
     pickup_y: 0,
@@ -82,9 +82,9 @@ const testDataArr3 = [
     service_kind_id: 4,
   },
   {
-    //rev_id = 3-3
-    //hos: 서울대학교 어린이병원
-    //drop: 뚝섬역
+    rev_id: "3-3",
+    hos: "서울대학교 어린이병원",
+    drop: "뚝섬역",
     dire: "병원-집",
     pickup_x: 0,
     pickup_y: 0,
@@ -99,10 +99,10 @@ const testDataArr3 = [
     service_kind_id: 4,
   },
   {
-    //rev_id = 3-4
-    //pickup: 홍제역
-    //hos: 서울대학교 어린이병원
-    //drop: 홍제역
+    rev_id: "3-4",
+    pickup: "홍제역",
+    hos: "서울대학교 어린이병원",
+    drop: "홍제역",
     dire: "집-집",
     pickup_x: 126.94413759328273,
     pickup_y: 37.588831385163964,
@@ -117,10 +117,10 @@ const testDataArr3 = [
     service_kind_id: 5,
   },
   {
-    //rev_id = 3-5
-    //pickup: 신림현대아파트
-    //hos: 서울특별시 보라매병원
-    //drop: 부천 휴먼시아 2단지
+    rev_id: "3-5",
+    pickup: "신림현대아파트",
+    hos: "서울특별시 보라매병원",
+    drop: "부천 휴먼시아 2단지",
     dire: "집-집",
     pickup_x: 126.93241922244533,
     pickup_y: 37.47556938830176,
@@ -135,10 +135,10 @@ const testDataArr3 = [
     service_kind_id: 5,
   },
   {
-    //rev_id = 3-6
-    //pickup: 다산반도유보라메이플타운
-    //hos: 한양대학교 구리병원
-    //drop: 다산반도유보라메이플타운
+    rev_id: "3-6",
+    pickup: "다산반도유보라메이플타운",
+    hos: "한양대학교 구리병원",
+    drop: "다산반도유보라메이플타운",
     dire: "집-집",
     pickup_x: 127.15376121672266,
     pickup_y: 37.629561506557145,

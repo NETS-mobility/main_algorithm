@@ -2,8 +2,7 @@
 // 인접 기준 - 서비스 시작 시간
 
 // id: 차량 아이디
-// rd: 예약 날짜 (문자열, ex. "2022-03-04")
-// rt: 서비스 시작 시간 (문자열, ex. "13:00")
+// rtime: 서비스 시작 시간 (Date 객체)
 
 /*
  * 이전 예약정보: prev 
@@ -17,20 +16,35 @@
  * (예약정보가 없을 경우, 장소는 차고지주소)
  */
 
-const work_start_time = "09:00:00"; // 운행시작시간 (임시 데이터)
+const work_start_time = "09:00:00"; // 운행시작시간
 const work_close_time = "21:00:00"; // 운행종료시간
 
-const pool2 = require("./mysql2");
+const pool2 = require("../util/mysql2");
 
-const getCarAdjRev = async (id, rd, rtime) => {
+const getCarAdjRev = async (id, pickupTime) => {
   let result;
+  const pickupDate = new Date(pickupTime);
+  let year = pickupDate.getFullYear();
+  let month = pickupDate.getMonth() + 1;
+  month = month >= 10 ? month : '0' + month;
+  let day = pickupDate.getDate();
+  day = day >= 10 ? day : '0' + day;
+  const rd = year + "-" + month + "-" + day;
+
+  let hour = pickupDate.getHours();
+  hour = hour >= 10 ? hour : '0' + hour;
+  let min = pickupDate.getMinutes();
+  min = min >= 10 ? min : '0' + min;
+  const rt = hour + ":" + min;
+
+  console.log({id, rd, rt});
   const connection = await pool2.getConnection(async (conn) => conn);
   try {
     const sql1 = "select * from `car_reservation` where `car_id`=? and `date`=? and `terminate_time`<? order by `terminate_time` DESC;";
-    const sqlr1 = await connection.query(sql1, [id, rd, rtime]);
+    const sqlr1 = await connection.query(sql1, [id, rd, rt]);
     const sqld1 = sqlr1[0];
     const sql2 = "select * from `car_reservation` where `car_id`=? and `date`=? and `pickup_time`>? order by `pickup_time`;";
-    const sqlr2 = await connection.query(sql2, [id, rd, rtime]);
+    const sqlr2 = await connection.query(sql2, [id, rd, rt]);
     const sqld2 = sqlr2[0];
     const sql3 = "select `x_coordinate` as `x`, `y_coordinate` as `y` from `car` as C, `address_coordinate` as A where C.`car_id`=? and C.`garage_detail_address`=A.`address`;";
 
@@ -46,7 +60,7 @@ const getCarAdjRev = async (id, rd, rtime) => {
     else
     {
       const sqlr3 = await connection.query(sql3, [id]);
-      const sqld3 = sqlr3[0];
+      const sqld3 = sqlr3[0]; // 차고지주소 가져오기
       prev = {
         time: work_start_time,
         x: sqld3[0].x,

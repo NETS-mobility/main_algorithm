@@ -42,7 +42,7 @@ const Case1 = async (testData, isCase1) => {
 
   pickupTime = GetPickupTime(hos_arr_time, estimatedTime); //pickupTime = 00-00-00T00:00:00+0900
 
-  L1 = GetL1(estimatedTime, pickupTime); //백엔드에서 test 필요
+  L1 = await GetL1(estimatedTime, pickupTime, rev_date); //백엔드에서 test 필요
 
   prevDepartureTimeArray = await GetPrevDepartureTime(
     L1,
@@ -50,8 +50,10 @@ const Case1 = async (testData, isCase1) => {
     pickup_y,
     ToKoreanTime(new Date(pickupTime))
   ).then((res) => res);
+  console.log(prevDepartureTimeArray);
 
-  L2 = GetL2(prevDepartureTimeArray);
+  L2 = await GetL2(prevDepartureTimeArray, ToKoreanTime(new Date(pickupTime)));
+  console.log(L2);
 
   L3 = await GetDispatchAvailableCar(
     L2,

@@ -40,7 +40,7 @@ const Case3 = async (testData) => {
 
   pickupTime = GetPickupTime(hos_arr_time, toHosEstimatedTime);
 
-  L1 = GetL1(toHosEstimatedTime, pickupTime);
+  L1 = await GetL1(toHosEstimatedTime, pickupTime, rev_date);
 
   prevDepartureTimeArray = await GetPrevDepartureTime(
     L1,
@@ -49,7 +49,7 @@ const Case3 = async (testData) => {
     ToKoreanTime(new Date(pickupTime))
   ).then((res) => res);
 
-  L2 = GetL2(prevDepartureTimeArray);
+  L2 = await GetL2(prevDepartureTimeArray);
 
   let toHomeEstimated = await GetEstimatedTime(
     { lon: hos_y, lat: hos_x },

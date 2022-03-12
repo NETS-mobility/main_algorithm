@@ -19,6 +19,7 @@ const GetEstimatedTime = async (
   }
 
   try {
+    const service_time = await GetArrangeTime(service_kind_id);
     await TmapTimeMachine(
       departure?.lon,
       departure?.lat,
@@ -28,7 +29,7 @@ const GetEstimatedTime = async (
       hosTime
     ).then((tmapTime) => {
       estimatedTime =
-        tmapTime.estimatedTime + 20 + GetArrangeTime(service_kind_id); //a1
+        tmapTime.estimatedTime + 20 + service_time; //a1
       estimatedDistance = tmapTime.estimatedDistance;
     });
     estimatedTime = estimatedTime * 60000; //minutes -> milliseconds

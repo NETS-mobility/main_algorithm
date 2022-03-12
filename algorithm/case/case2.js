@@ -43,7 +43,7 @@ const Case2 = async (testData, isCase2) => {
     AddMinuteToDate(new Date(hos_dep_time), -gowithTime)
   );
 
-  L1 = GetL1(estimatedTime, pickupTime);
+  L1 = await GetL1(estimatedTime, pickupTime, rev_date);
 
   prevDepartureTimeArray = await GetPrevDepartureTime(
     L1,
@@ -52,7 +52,7 @@ const Case2 = async (testData, isCase2) => {
     ToKoreanTime(new Date(pickupTime))
   ).then((res) => res);
 
-  L2 = GetL2(prevDepartureTimeArray);
+  L2 = await GetL2(prevDepartureTimeArray);
 
   L3 = await GetDispatchAvailableCar(
     L2,
