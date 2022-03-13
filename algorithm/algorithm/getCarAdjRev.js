@@ -25,18 +25,8 @@ const getCarAdjRev = async (id, pickupTime) => {
   let result;
   
   const pickupDate = new Date(pickupTime);
-  let year = pickupDate.getFullYear();
-  let month = pickupDate.getMonth() + 1;
-  month = month >= 10 ? month : '0' + month;
-  let day = pickupDate.getDate();
-  day = day >= 10 ? day : '0' + day;
-  const rd = year + "-" + month + "-" + day;
-
-  let hour = pickupDate.getHours();
-  hour = hour >= 10 ? hour : '0' + hour;
-  let min = pickupDate.getMinutes();
-  min = min >= 10 ? min : '0' + min;
-  const rt = hour + ":" + min;
+  const rd = pickupDate.getFullYear() + "-" + (pickupDate.getMonth()+1) + "-" + pickupDate.getDate();
+  const rt = pickupDate.getHours() + ":" + pickupDate.getMinutes();
 
   const connection = await pool2.getConnection(async (conn) => conn);
   try {

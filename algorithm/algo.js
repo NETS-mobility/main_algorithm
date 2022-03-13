@@ -13,15 +13,7 @@ const Algo = async (revData) => {
     isOverPoint = 0;
   }
 
-  success = await insertDispatch([{ 
-    dispatch: [{car_id: 5, prevDepartureTime: "2022-03-04T06:00:00.000Z"}],
-    expect_pickup_time: '2022-03-04T16:00:00+0900',
-    expect_terminate_service_time: '2022-03-04T17:20:00+0900',
-    expect_move_distance: 0.06,
-    expect_move_time: 80
-  }], revData, [1], false);
-
-  /*if (revData.dire == "집-집") {
+  if (revData.dire == "집-집") {
     if (isOverPoint) {
       //case4의 경우, 인자를 넘겨줄 때 gowithHospitalTime을 0으로 줘야 한다.
       let dispatchResult4_1 = await Case1(revData, false);
@@ -50,7 +42,7 @@ const Algo = async (revData) => {
     if (dispatchResult2 != -1) {
       success = await insertDispatch([dispatchResult2], revData, [2], false);
     }
-  }*/
+  }
   console.log("Done!");
   return success;
 };
