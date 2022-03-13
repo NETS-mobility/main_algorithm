@@ -6,9 +6,7 @@ const GetPrevDepartureTime = async (L1, res_x, res_y, pickupTime) => {
   const prevDepartureTimeArray = [];
   try {
     for (let i = 0; i < L1.length; i++) {
-      console.log(pickupTime);
       const car_schedule = await getCarAdjRev(L1[i].car_id, pickupTime);
-      console.log(car_schedule);
       await new Promise((resolve) => setTimeout(resolve, 500));
       await TmapTimeMachine(
         car_schedule.prev.y,

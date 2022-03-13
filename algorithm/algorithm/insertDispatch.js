@@ -23,6 +23,7 @@ const pool2 = require("../util/mysql2");
 
 const InsertDispatch = async (dispatchResult, revData, direction, is3) => {
   let success = true;
+  console.log({dispatchResult, revData, direction, is3});
   const connection = await pool2.getConnection(async (conn) => conn);
   try {
     await connection.beginTransaction(); // 트랜잭션 시작
@@ -30,7 +31,7 @@ const InsertDispatch = async (dispatchResult, revData, direction, is3) => {
     for(let i = 0; i < dispatchResult.length; i++)
     {
       const dire = direction[i];
-      const rev_id = "1234" // rev_id
+      const rev_id = "200215000000"; // revData.rev_id;
       const car_id = dispatchResult[i].dispatch[0].car_id;
       const manager_id = "5"; // 기본적으로 차량의 운전자로 배정
       const adr_start = (dire == 1) ? revData.pickup : revData.hos;
@@ -48,7 +49,7 @@ const InsertDispatch = async (dispatchResult, revData, direction, is3) => {
         const adr = (w == 0) ? adr_start : adr_end;
         const sql1 = "select * from `address_coordinate` where `address`=?;"
         const sqlr1 = await connection.query(sql1, [adr]);
-        if(sqlr1[0].length() == 0)
+        if(sqlr1[0].length == 0)
         {
           let x = 0;
           let y = 0;
@@ -62,6 +63,8 @@ const InsertDispatch = async (dispatchResult, revData, direction, is3) => {
           await connection.query(sql2, [adr, x, y]);
         }
       }
+
+      console.log([rev_id + dire, rev_id, car_id, manager_id, adr_start, adr_end, time_start, time_end]);
 
       const sql = "insert into `car_dispatch` values (?,?,?,?,?,?,?,?);"
       await connection.query(sql, [rev_id + dire, rev_id, car_id, manager_id, adr_start, adr_end, time_start, time_end]);

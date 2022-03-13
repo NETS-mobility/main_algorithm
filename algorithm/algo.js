@@ -13,42 +13,45 @@ const Algo = async (revData) => {
     isOverPoint = 0;
   }
 
-  if (revData.dire == "집-집") {
+  success = await insertDispatch([{ 
+    dispatch: [{car_id: 5, prevDepartureTime: "2022-03-04T06:00:00.000Z"}],
+    expect_pickup_time: '2022-03-04T16:00:00+0900',
+    expect_terminate_service_time: '2022-03-04T17:20:00+0900',
+    expect_move_distance: 0.06,
+    expect_move_time: 80
+  }], revData, [1], false);
+
+  /*if (revData.dire == "집-집") {
     if (isOverPoint) {
       //case4의 경우, 인자를 넘겨줄 때 gowithHospitalTime을 0으로 줘야 한다.
       let dispatchResult4_1 = await Case1(revData, false);
       let dispatchResult4_2 = await Case2(revData, false);
-      console.log(
-        `집-집 2시간 이상: ${JSON.stringify(dispatchResult4_1)}`
-      );
-      console.log(
-        `집-집 2시간 이상: ${JSON.stringify(dispatchResult4_2)}`
-      );
+      console.log(dispatchResult4_1);
+      console.log(dispatchResult4_2);
       if (dispatchResult4_1 != -1 && dispatchResult4_2 != -1) {
         success = await insertDispatch([dispatchResult4_1, dispatchResult4_2], revData, [1, 2], false);
       }
     } else {
       let dispatchResult3 = await Case3(revData);
-      console.log(
-        `집-집 2시간 이하: ${JSON.stringify(dispatchResult3)}`
-      );
+      console.log(dispatchResult3);
       if (dispatchResult3 != -1) {
         success = await insertDispatch([dispatchResult3, dispatchResult3], revData, [1, 2], true);
       }
     }
   } else if (revData.dire == "집-병원") {
     let dispatchResult1 = await Case1(revData, true);
-    console.log(`집-병원: ${JSON.stringify(dispatchResult1)}`);
+    console.log(dispatchResult1);
     if (dispatchResult1 != -1) {
       success = await insertDispatch([dispatchResult1], revData, [1], false);
     }
   } else if (revData.dire == "병원-집") {
     let dispatchResult2 = await Case2(revData, true);
-    console.log(`병원-집: ${JSON.stringify(dispatchResult2)}`);
+    console.log(dispatchResult2);
     if (dispatchResult2 != -1) {
       success = await insertDispatch([dispatchResult2], revData, [2], false);
     }
-  }
+  }*/
+  console.log("Done!");
   return success;
 };
 

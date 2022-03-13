@@ -23,6 +23,7 @@ const pool2 = require("../util/mysql2");
 
 const getCarAdjRev = async (id, pickupTime) => {
   let result;
+  
   const pickupDate = new Date(pickupTime);
   let year = pickupDate.getFullYear();
   let month = pickupDate.getMonth() + 1;
@@ -37,7 +38,6 @@ const getCarAdjRev = async (id, pickupTime) => {
   min = min >= 10 ? min : '0' + min;
   const rt = hour + ":" + min;
 
-  console.log({id, rd, rt});
   const connection = await pool2.getConnection(async (conn) => conn);
   try {
     const sql1 = "select * from `car_reservation` where `car_id`=? and `date`=? and `terminate_time`<? order by `terminate_time` DESC;";
@@ -52,7 +52,7 @@ const getCarAdjRev = async (id, pickupTime) => {
     if(sqld1.length > 0)
     {
       prev = {
-        time: sqld1[0].terminate_time,
+        time: rd + " " + sqld1[0].terminate_time,
         x: sqld1[0].arrival_x,
         y: sqld1[0].arrival_y
       }
@@ -62,7 +62,7 @@ const getCarAdjRev = async (id, pickupTime) => {
       const sqlr3 = await connection.query(sql3, [id]);
       const sqld3 = sqlr3[0]; // 차고지주소 가져오기
       prev = {
-        time: work_start_time,
+        time: rd + " " + work_start_time,
         x: sqld3[0].x,
         y: sqld3[0].y
       }
@@ -70,7 +70,7 @@ const getCarAdjRev = async (id, pickupTime) => {
     if(sqld2.length > 0)
     {
       next = {
-        time: sqld2[0].pickup_time,
+        time: rd + " " + sqld2[0].pickup_time,
         x: sqld2[0].start_x,
         y: sqld2[0].start_y
       }
@@ -80,7 +80,7 @@ const getCarAdjRev = async (id, pickupTime) => {
       const sqlr3 = await connection.query(sql3, [id]);
       const sqld3 = sqlr3[0];
       next = {
-        time: work_close_time,
+        time: rd + " " + work_close_time,
         x: sqld3[0].x,
         y: sqld3[0].y
       }

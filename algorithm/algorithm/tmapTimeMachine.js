@@ -36,12 +36,17 @@ const TmapTimeMachine = async (
   });
 
   //예상 소요시간 계산
-  let estimatedTime = 0;
+  let estimatedTime = 60;
   //예상 소요거리 계산
-  let estimatedDistance = 0;
+  let estimatedDistance = 60;
+
+  return {
+      estimatedTime: estimatedTime,
+      estimatedDistance: estimatedDistance,
+    };
 
   //API에서 data받아오기
-  try {
+  /*try {
     const res = await axios({
       method: "POST",
       url: urlStr,
@@ -56,7 +61,7 @@ const TmapTimeMachine = async (
     };
   } catch (err) {
     console.log(err);
-  }
+  }*/
 };
 
 module.exports = TmapTimeMachine;

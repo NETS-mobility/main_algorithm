@@ -50,10 +50,8 @@ const Case1 = async (testData, isCase1) => {
     pickup_y,
     ToKoreanTime(new Date(pickupTime))
   ).then((res) => res);
-  console.log(prevDepartureTimeArray);
 
-  L2 = await GetL2(prevDepartureTimeArray, ToKoreanTime(new Date(pickupTime)));
-  console.log(L2);
+  L2 = await GetL2(prevDepartureTimeArray, pickupTime);
 
   L3 = await GetDispatchAvailableCar(
     L2,
@@ -75,7 +73,6 @@ const Case1 = async (testData, isCase1) => {
   if (ResultData.dispatch == -1) {
     return -1;
   } else {
-    console.log(ResultData);
     return ResultData;
   } //최종 배차된 차의 car_id
 };
