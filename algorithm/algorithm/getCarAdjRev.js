@@ -25,8 +25,18 @@ const getCarAdjRev = async (id, pickupTime) => {
   let result;
   
   const pickupDate = new Date(pickupTime);
-  const rd = pickupDate.getFullYear() + "-" + (pickupDate.getMonth()+1) + "-" + pickupDate.getDate();
-  const rt = pickupDate.getHours() + ":" + pickupDate.getMinutes();
+  const year = pickupDate.getFullYear();
+  let month = (pickupDate.getMonth()+1);
+  month = (month < 10) ? "0" + month : month;
+  let day = pickupDate.getDate();
+  day = (day < 10) ? "0" + day : day;
+  const rd = year + "-" + month + "-" + day;
+
+  let hours = pickupDate.getHours();
+  hours = (hours < 10) ? "0" + hours : hours;
+  let minutes = pickupDate.getMinutes();
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  const rt = hours + ":" + minutes;
 
   const connection = await pool2.getConnection(async (conn) => conn);
   try {
@@ -42,7 +52,7 @@ const getCarAdjRev = async (id, pickupTime) => {
     if(sqld1.length > 0)
     {
       prev = {
-        time: rd + " " + sqld1[0].terminate_time,
+        time: rd + "T" + sqld1[0].terminate_time + "+0900",
         x: sqld1[0].arrival_x,
         y: sqld1[0].arrival_y
       }
@@ -52,7 +62,7 @@ const getCarAdjRev = async (id, pickupTime) => {
       const sqlr3 = await connection.query(sql3, [id]);
       const sqld3 = sqlr3[0]; // 차고지주소 가져오기
       prev = {
-        time: rd + " " + work_start_time,
+        time: rd + "T" + work_start_time + "+0900",
         x: sqld3[0].x,
         y: sqld3[0].y
       }
@@ -60,7 +70,7 @@ const getCarAdjRev = async (id, pickupTime) => {
     if(sqld2.length > 0)
     {
       next = {
-        time: rd + " " + sqld2[0].pickup_time,
+        time: rd + "T" + sqld2[0].pickup_time + "+0900",
         x: sqld2[0].start_x,
         y: sqld2[0].start_y
       }
@@ -70,7 +80,7 @@ const getCarAdjRev = async (id, pickupTime) => {
       const sqlr3 = await connection.query(sql3, [id]);
       const sqld3 = sqlr3[0];
       next = {
-        time: rd + " " + work_close_time,
+        time: rd + "T" + work_close_time + "+0900",
         x: sqld3[0].x,
         y: sqld3[0].y
       }

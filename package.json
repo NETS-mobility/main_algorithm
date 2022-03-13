@@ -19,11 +19,13 @@
   "homepage": "https://github.com/NETS-mobility/main_algorithm#readme",
   "dependencies": {
     "axios": "^0.25.0",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
+    "http-proxy-middleware": "^2.0.2",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
-    "http-proxy-middleware": "^2.0.2",
-    "cors": "^2.8.5",
-    "body-parser": "^1.19.1"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
   }
 }
