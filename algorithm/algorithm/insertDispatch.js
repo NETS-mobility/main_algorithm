@@ -81,7 +81,7 @@ const InsertDispatch = async (dispatchResult, revData, direction, is3) => {
       const time_end2 = time_endd.getFullYear() + "-" + (time_endd.getMonth()+1) + "-" + time_endd.getDate() + " " + time_endd.getHours() + ":" + time_endd.getMinutes();
       const prev_dep_time2 = prev_dep_timed.getFullYear() + "-" + (prev_dep_timed.getMonth()+1) + "-" + prev_dep_timed.getDate() + " " + prev_dep_timed.getHours() + ":" + prev_dep_timed.getMinutes();
 
-      const sql = "insert into `car_dispatch`(`reservation_id`,`car_id`,`netsmanager_number`,`departure_address`,`destination_address`,`expect_car_pickup_time`,`expect_car_terminate_service_time`,`prev_departure_time`) values (?,?,?,?,?,?,?,?);"
+      const sql = "insert into `car_dispatch`(`reservation_id`,`car_id`,`netsmanager_number`,`departure_address`,`destination_address`,`expect_car_pickup_time`,`expect_car_terminate_service_time`) values (?,?,?,?,?,?,?);"
       await connection.query(sql, ["200209000000", car_id, manager_number, adr_start, adr_end, time_start2, time_end2, prev_dep_time2]);
     }
 
