@@ -36,9 +36,9 @@ const TmapTimeMachine = async (
   });
 
   //예상 소요시간 계산
-  let estimatedTime = 60;
+  let estimatedTime = 0;
   //예상 소요거리 계산
-  let estimatedDistance = 60;
+  let estimatedDistance = 0;
 
   //API에서 data받아오기
   try {
