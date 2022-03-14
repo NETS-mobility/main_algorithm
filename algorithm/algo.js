@@ -7,8 +7,8 @@ const Algo = async (revData) => {
   let isOverPoint = 0;
 
   await new Promise((resolve) => setTimeout(resolve, 500));
-  if (revData.gowithHospitalTime > 120) {
-    isOverPoint = 1; // 2시간 초과
+  if (revData.gowithHospitalTime >= 120) {
+    isOverPoint = 1; // 2시간 이상
   } else {
     isOverPoint = 0;
   }
